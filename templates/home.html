@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Race Tracker</title>
+</head>
+<body>
+    <h1>F1 Races for 2024 Season</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Round</th>
+                <th>Race Name</th>
+                <th>Season</th>
+                <th>Circuit Name</th>
+                <th>Position</th>
+                <th>Driver Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.race.round }}</td>
+                <td>{{ result.race.race_name }}</td>
+                <td>{{ result.race.season }}</td>
+                <td>{{ result.race.circuit_name }}</td>
+                <td>{{ result.position }}</td>
+                <td>{{ result.driver.name }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
